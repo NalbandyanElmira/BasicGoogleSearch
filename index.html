@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Google</title>
+    <link rel="icon" href="images/google-logo.png" type="image/x-icon">
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+      }
+      .bg {
+        background-image: url("images/back.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .search-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .logo {
+        width: 500px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Spacing between logo and search bar */
+      }
+      .search-input {
+        width: 600px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .search-button {
+        background-color: #4285f4; /* Google's blue color */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .search-button:hover {
+        background-color: #357ae8; /* Darker blue color on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+    <div class="search-container">
+      <img class="logo" src="images/google-white-logo.png" alt="Google Logo">
+      <input class="search-input" type="text">
+      <button class="search-button" id="search-button">Search</button>
+    </div>
+  </div>
+  <script>
+    // JavaScript code to navigate to the search results page
+    document.getElementById("search-button").addEventListener("click", function() {
+      const searchInput = document.querySelector(".search-input").value;
+      const searchResultURL = "search_results/search_result_" + searchInput + ".html";
+      window.location.href = searchResultURL;
+    });
+  </script>
+  </body>
+</html>
